@@ -360,30 +360,78 @@ a {
 .service-card p { margin: 0; font-size: 1rem; color: var(--color-text-muted); }
 
 /* Legal Section Layout */
+/* ==========================================================================
+   Legal & Compliance Section Layout (Enhanced)
+   ========================================================================== */
 .legal-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.2fr;
   gap: 80px;
+  align-items: center;
 }
 
-.legal-list {
-  margin: 0;
+.legal-header-block {
+  max-width: 480px;
+}
+
+.legal-framework-cards {
   display: grid;
-  gap: 32px;
+  gap: 24px;
 }
 
-.legal-list dt {
-  font-family: var(--font-display);
-  font-size: 1rem;
+.compliance-card {
+  background: var(--color-paper);
+  border: 1px solid var(--color-ledger-line);
+  padding: 32px;
+  position: relative;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.compliance-card:hover {
+  border-color: var(--color-ink);
+  background-color: var(--color-cream-card);
+}
+
+.compliance-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed var(--color-ledger-line);
+}
+
+.compliance-tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
   font-weight: 700;
-  color: var(--color-ink);
-  margin-bottom: 0.5em;
+  letter-spacing: 0.08em;
+  background: var(--color-ink);
+  color: #ffffff;
+  padding: 2px 8px;
+  text-transform: uppercase;
 }
 
-.legal-list dd {
-  margin: 0;
+.compliance-status {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--color-ledger-green);
+  letter-spacing: 0.05em;
+}
+
+.compliance-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--color-ink);
+}
+
+.compliance-card p {
   font-size: 0.95rem;
   color: var(--color-text-muted);
+  margin: 0;
+  line-height: 1.5;
 }
 
 /* Contact Block Layout */
