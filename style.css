@@ -1,31 +1,32 @@
-/* ===========================
-   Tokens
-=========================== */
+/* ==========================================================================
+   PwC Corporate Tech Framework Tokens
+   ========================================================================== */
 :root {
-  /* Updated to match the Dark Theme of the Logo */
-  --color-paper: #2c323d;         /* Slate/Dark Charcoal background from logo */
-  --color-ink: #ffffff;           /* Pristine white text for contrast ("solo") */
-  --color-ledger-green: #f26522;  /* Vibrant logo Brand Orange ("books") */
-  --color-ledger-line: #3e4654;   /* Subtle divider lines matching the background tone */
-  --color-rust: #f26522;          /* Orange accent color used for secondary features */
-  --color-cream-card: #222730;    /* Slightly darker contrast cards */
-  --color-text-muted: #a0a7b5;    /* Gray text color for secondary paragraph hierarchy */
+  /* The PwC-Inspired Signature Palette */
+  --color-paper: #ffffff;          /* Pure stark white content canvas */
+  --color-ink: #1c2024;            /* Command Charcoal Gray from your logo */
+  --color-ledger-green: #f26522;   /* PwC-style Vibrant Orange from your logo */
+  --color-ledger-line: #e2e5e8;    /* Razor-thin structural layout lines */
+  --color-rust: #f26522;           /* Accents and micro-interactions */
+  --color-cream-card: #f8f9fa;     /* Corporate warm light gray for card surfaces */
+  --color-text-muted: #4a5568;     /* Sophisticated off-black for elite readability */
 
-  /* Font updates: Shifted from Serif to Sans-Serif to match logo's geometric vibe */
-  --font-display: 'Inter', -apple-system, Segoe UI, sans-serif;
-  --font-body: 'Inter', -apple-system, Segoe UI, sans-serif;
-  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+  /* Elite Global Enterprise Typography */
+  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: 'SF Mono', 'JetBrains Mono', monospace;
 
-  --max-width: 1160px;
-  --radius: 4px;
+  --max-width: 1200px;             /* Extended slightly for a wider corporate presence */
+  --radius: 0px;                   /* Strict PwC rule: 100% sharp corners, zero rounded borders */
 }
 
-@font-face {
-  font-family: 'Inter';
-  src: local('Inter');
-}
+/* Load Inter with full weight spectrum */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
-* { box-sizing: border-box; }
+* { 
+  box-sizing: border-box; 
+  border-radius: var(--radius) !important; /* Forces total boxy nature across all components */
+}
 
 html { scroll-behavior: smooth; }
 
@@ -36,103 +37,130 @@ body {
   color: var(--color-ink);
   line-height: 1.6;
   font-size: 16px;
+  -webkit-font-smoothing: antialiased;
 }
 
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 32px; /* Increased padding for an expensive, expansive layout feel */
 }
 
+/* ==========================================================================
+   Typography Hierarchy
+   ========================================================================== */
 h1, h2, h3 {
   font-family: var(--font-display);
-  font-weight: 700; /* Increased to 700 to match the logo's weight */
-  line-height: 1.15;
-  margin: 0 0 0.5em;
   color: var(--color-ink);
-  letter-spacing: -0.02em; /* Gives headings a modern tech feel */
+  line-height: 1.1;
+  margin: 0 0 0.4em;
+  letter-spacing: -0.03em; /* Tight structural kerning */
 }
 
-h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); }
-h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); }
-h3 { font-size: 1.2rem; }
+h1 { 
+  font-weight: 800; 
+  font-size: clamp(2.8rem, 6vw, 4.2rem); 
+}
 
-p { margin: 0 0 1em; color: var(--color-text-muted); } /* Updated for better readability on dark background */
+h2 { 
+  font-weight: 700; 
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  border-left: 4px solid var(--color-ledger-green); /* PwC vertical structural line accent */
+  padding-left: 16px;
+}
 
-a { color: var(--color-ledger-green); text-decoration: none; }
+h3 { 
+  font-weight: 700; 
+  font-size: 1.3rem; 
+  letter-spacing: -0.01em;
+}
+
+p { 
+  margin: 0 0 1.2em; 
+  color: var(--color-text-muted); 
+  font-size: 1.05rem;
+  font-weight: 400; 
+}
+
+a { 
+  color: var(--color-ledger-green); 
+  text-decoration: none; 
+}
 
 .eyebrow {
   font-family: var(--font-mono);
-  font-size: 0.78rem;
-  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--color-rust);
-  margin: 0 0 0.6em;
+  color: var(--color-ink); /* Clean corporate dark look */
+  margin: 0 0 1rem;
+  display: block;
 }
 
-/* ===========================
-   Header
-=========================== */
+/* ==========================================================================
+   Navigation Bar Header
+   ========================================================================== */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: var(--color-paper);
-  border-bottom: 1px solid var(--color-ledger-line);
+  background: #ffffff;
+  border-bottom: 2px solid var(--color-ink); /* Authoritative thick baseline divider */
 }
 
 .header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
+  height: 80px;
 }
 
 .brand {
   display: flex;
   align-items: center;
   gap: 12px;
+  text-decoration: none;
 }
 
-/* Updated logo/text block style */
-.brand-mark {
-  font-family: var(--font-mono);
-  font-weight: 700;
-  font-size: 1rem;
-  border: 1px solid var(--color-ink);
-  border-radius: var(--radius);
-  padding: 4px 8px;
-  color: var(--color-ink);
+.navbar-logo {
+  height: 30px;
+  width: auto;
+  display: block;
 }
 
 .brand-name {
   font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.2rem;
+  font-weight: 800;
+  font-size: 1.25rem;
   color: var(--color-ink);
+  letter-spacing: -0.02em;
+  text-transform: uppercase; /* Sharp corporate identity */
 }
 
 .nav {
   display: flex;
-  gap: 32px;
+  gap: 40px;
 }
 
 .nav a {
   color: var(--color-ink);
   font-size: 0.95rem;
-  font-weight: 500;
+  font-weight: 600;
   position: relative;
-  padding-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 8px 0;
 }
 
 .nav a::after {
   content: "";
   position: absolute;
   left: 0; right: 0; bottom: 0;
-  height: 2px;
+  height: 3px;
   background: var(--color-rust);
   transform: scaleX(0);
-  transition: transform 0.2s ease;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .nav a:hover::after,
@@ -145,11 +173,10 @@ a { color: var(--color-ledger-green); text-decoration: none; }
   flex-direction: column;
   justify-content: center;
   gap: 5px;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   background: none;
-  border: 1px solid var(--color-ledger-line);
-  border-radius: var(--radius);
+  border: 1px solid var(--color-ink);
   cursor: pointer;
 }
 
@@ -157,72 +184,77 @@ a { color: var(--color-ledger-green); text-decoration: none; }
   display: block;
   height: 2px;
   background: var(--color-ink);
-  margin: 0 7px;
+  margin: 0 10px;
 }
 
-/* ===========================
-   Buttons
-=========================== */
+/* ==========================================================================
+   Buttons (Sharp Box Nature)
+   ========================================================================== */
 .btn {
   display: inline-block;
-  padding: 0.85em 1.6em;
-  border-radius: var(--radius);
-  font-weight: 600;
-  font-size: 0.95rem;
-  border: 1px solid transparent;
+  padding: 1rem 2.2rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border: 2px solid var(--color-ink);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
   cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-primary {
-  background: var(--color-ledger-green);
+  background: var(--color-ink);
   color: #ffffff;
 }
 
-.btn-primary:hover { background: #e0530f; } /* Darker vibrant orange for contrast hover state */
+.btn-primary:hover { 
+  background: var(--color-ledger-green); 
+  border-color: var(--color-ledger-green);
+  color: #ffffff;
+}
 
 .btn-ghost {
   background: transparent;
   color: var(--color-ink);
   border-color: var(--color-ink);
-  margin-left: 12px;
+  margin-left: 16px;
 }
 
 .btn-ghost:hover {
   background: var(--color-ink);
-  color: var(--color-paper);
+  color: #ffffff;
 }
 
-/* ===========================
-   Hero
-=========================== */
+/* ==========================================================================
+   Hero Block Layout
+   ========================================================================== */
 .hero {
-  padding: 90px 0 60px;
-  display: grid;
-  grid-template-columns: 1fr;
+  padding: 120px 0 80px;
+  background: var(--color-paper);
 }
 
 .hero-inner {
-  max-width: 720px;
+  max-width: 800px;
 }
 
 .hero-lead {
-  font-size: 1.1rem;
-  max-width: 540px;
+  font-size: 1.25rem;
+  line-height: 1.7;
+  max-width: 640px;
+  color: var(--color-text-muted);
+  margin-top: 1.5em;
 }
 
-.hero-actions { margin-top: 1.5em; }
+.hero-actions { margin-top: 2.5em; }
 
 .hero-ledger {
-  margin: 56px auto 0;
+  margin: 80px auto 0;
   max-width: var(--max-width);
-  padding: 0 24px;
   display: grid;
   gap: 1px;
   border: 1px solid var(--color-ledger-line);
-  border-radius: var(--radius);
-  overflow: hidden;
   background: var(--color-ledger-line);
+  box-shadow: none; /* Corporate flats rule over shadow gradients */
 }
 
 .ledger-row {
@@ -230,234 +262,33 @@ a { color: var(--color-ledger-green); text-decoration: none; }
   justify-content: space-between;
   align-items: center;
   background: var(--color-cream-card);
-  padding: 14px 24px;
+  padding: 20px 32px;
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: 0.9rem;
+  color: var(--color-ink);
 }
 
 .status {
-  font-size: 0.72rem;
-  padding: 4px 10px;
-  border-radius: 999px;
+  font-size: 0.75rem;
+  padding: 6px 14px;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  font-weight: 600;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  border: 1px solid transparent;
 }
 
-/* UI Balance optimizations for Dark Mode badges */
-.status-done { background: #1c3d27; color: #5cd68a; }
-.status-pending { background: #4a2711; color: var(--color-rust); }
-.status-progress { background: #38332a; color: #c4b495; }
+.status-done { background: #e6f7ed; color: #1f7a42; border-color: rgba(31,122,66,0.2); }
+.status-pending { background: #fff3ed; color: var(--color-rust); border-color: rgba(242,101,34,0.2); }
+.status-progress { background: #f1f3f5; color: #495057; border-color: rgba(73,80,87,0.2); }
 
-/* ===========================
-   Sections
-=========================== */
+/* ==========================================================================
+   Content Grid Sections
+   ========================================================================== */
 .section {
-  padding: 80px 0;
+  padding: 100px 0;
   border-bottom: 1px solid var(--color-ledger-line);
 }
 
 .section:last-of-type { border-bottom: none; }
 
-/* About */
-.about-grid {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 56px;
-  align-items: start;
-}
-
-.about-stats {
-  display: grid;
-  gap: 24px;
-  align-content: start;
-}
-
-.stat {
-  border: 1px solid var(--color-ledger-line);
-  border-radius: var(--radius);
-  padding: 20px 24px;
-  background: var(--color-cream-card);
-}
-
-.stat-number {
-  display: block;
-  font-family: var(--font-display);
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--color-ledger-green);
-}
-
-.stat-label {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
-}
-
-/* Services */
-.service-grid {
-  margin-top: 40px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.service-card {
-  background: var(--color-cream-card);
-  border: 1px solid var(--color-ledger-line);
-  border-radius: var(--radius);
-  padding: 28px;
-  border-top: 3px solid var(--color-ledger-green);
-}
-
-.service-card h3 { margin-bottom: 0.4em; }
-.service-card p { margin: 0; font-size: 0.95rem; color: var(--color-text-muted); }
-
-/* Legal */
-.legal-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 56px;
-}
-
-.legal-list {
-  margin: 0;
-  display: grid;
-  gap: 20px;
-}
-
-.legal-list dt {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--color-rust);
-  margin-bottom: 0.3em;
-}
-
-.legal-list dd {
-  margin: 0;
-  font-size: 0.95rem;
-  color: var(--color-text-muted);
-}
-
-/* Contact */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.3fr;
-  gap: 56px;
-}
-
-.contact-form {
-  display: grid;
-  gap: 18px;
-}
-
-.form-row {
-  display: grid;
-  gap: 6px;
-}
-
-.form-row label {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
-}
-
-.form-row input,
-.form-row textarea {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  padding: 12px 14px;
-  border: 1px solid var(--color-ledger-line);
-  border-radius: var(--radius);
-  background: var(--color-cream-card);
-  color: var(--color-ink);
-}
-
-.form-row input:focus,
-.form-row textarea:focus {
-  outline: 2px solid var(--color-ledger-green);
-  outline-offset: 1px;
-}
-
-.contact-form .btn { justify-self: start; }
-
-.form-status {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  color: var(--color-ledger-green);
-  min-height: 1.2em;
-}
-
-/* ===========================
-   Footer
-=========================== */
-.site-footer {
-  padding: 36px 0;
-  background-color: rgba(0, 0, 0, 0.1);
-  border-top: 1px solid var(--color-ledger-line);
-}
-
-.footer-inner p {
-  font-size: 0.85rem;
-  margin: 0 0 0.4em;
-  color: var(--color-text-muted);
-}
-
-.footer-sub { font-style: italic; }
-
-/* ===========================
-   Responsive
-=========================== */
-@media (max-width: 860px) {
-  .about-grid,
-  .legal-grid,
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .service-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .hero-ledger { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 640px) {
-  .nav { display: none; }
-  .nav-toggle { display: flex; }
-
-  .site-header.menu-open .nav {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 72px;
-    left: 0;
-    right: 0;
-    background: var(--color-paper);
-    border-bottom: 1px solid var(--color-ledger-line);
-    padding: 16px 24px 24px;
-    gap: 16px;
-  }
-
-  .service-grid { grid-template-columns: 1fr; }
-
-  .ledger-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-  }
-
-  .btn-ghost { margin-left: 0; margin-top: 12px; display: inline-block; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  * { transition: none !important; }
-}
+/* About Section modification
