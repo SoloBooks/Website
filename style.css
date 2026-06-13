@@ -1,10 +1,10 @@
 /* ==========================================================================
-   PwC Corporate Tech Framework Tokens
+   PwC Corporate Tech Framework Tokens - Updated Navy & Orange Palette
    ========================================================================== */
 :root {
-  /* The PwC-Inspired Signature Palette */
+  /* Updated Elite Corporate Navy & Orange Palette */
   --color-paper: #ffffff;          /* Pure stark white content canvas */
-  --color-ink: #1c2024;            /* Command Charcoal Gray from your logo */
+  --color-ink: #0f2240;            /* Premium Institutional Navy Blue from your new logo */
   --color-ledger-green: #f26522;   /* PwC-style Vibrant Orange from your logo */
   --color-ledger-line: #e2e5e8;    /* Razor-thin structural layout lines */
   --color-rust: #f26522;           /* Accents and micro-interactions */
@@ -136,7 +136,7 @@ a {
   font-family: var(--font-display);
   font-weight: 800;
   font-size: 1.25rem;
-  color: var(--color-ink); /* Holds "solo" as dark gray token */
+  color: var(--color-ink); /* Holds "solo" as dark navy token */
   letter-spacing: -0.02em;
   text-transform: uppercase; /* Sharp corporate identity alignment */
 }
@@ -648,7 +648,7 @@ a {
   .nav-toggle span {
     width: 20px !important;
     height: 2px !important;
-    background-color: #1c2024 !important; /* Command Charcoal color */
+    background-color: #0f2240 !important; /* Updated Command Corporate Navy color */
     display: block !important;
   }
 }
